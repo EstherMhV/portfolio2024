@@ -2,9 +2,10 @@
 const express = require('express')
 const app = express()
 const port = 3000
+const env = require('.env.local')
 
 const mongoose = require("mongoose")
-mongoose.connect('mongodb://0.0.0.0:27017/portfolio');
+mongoose.connect(env.mongoDB);
 
 
 
