@@ -1,11 +1,11 @@
-const Project = require('../models/projectlModel');
+const Project = require('../models/projectModel');
 const jwt = require('jsonwebtoken');
 
 
 exports.listAllProjects = async function (req, res) {
     try {
-        const users = await Skill.find({});
-        res.status(200).json(users);
+        const projects = await Project.find({});
+        res.status(200).json(projects);
     } catch (error) {
         res.status(500).json({ message: "Erreur server response" });
         console.log(error);
@@ -28,7 +28,7 @@ exports.updateAProject = async (req, res) =>{
     try {
         const project = await Skill.findByIdAndUpdate(req.params.id_project,req.body, {new : true});
         res.status(201);
-        res.json(user);
+        res.json(project);
     }
     catch (error) {
         res.status(500).json({message:"Error server response"});
@@ -50,9 +50,9 @@ exports.deleteAProject = async (req, res) =>{
 
 exports.getAProject = async (req, res) => {
     try{
-        const project = await Project.findById(req.params.id_skill);
+        const project = await Project.findById(req.params.id_project);
         res.status(201);
-        res.json(user);
+        res.json(project);
     }
     catch (error) {
         res.status(500);

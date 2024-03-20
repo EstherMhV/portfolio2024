@@ -1,30 +1,23 @@
 const express = require('express');
 const router = express.Router();
 
-const userController = require('../controllers/skillController');
+const skillController = require('../controllers/skillController');
 const jwtMiddleware = require('../middlewares/jwtMiddleware');
 
 router
-    .route('/register')
-    .post(userController.register)
+    .route('/create')
+    .post(skillController.createASkill)
 
-
-router
-    .route('/login')
-    .post(userController.login)
 
 router
     .route('/')
-    .get(jwtMiddleware.verifyToken,jwtMiddleware.verifyAdmin ,userController.listAllUsers)
+    .get(skillController.listAllSkills)
 
 router
-    .route('/:id_user')
-    .put(jwtMiddleware.verifyToken,userController.updateAUser)
-    .delete(jwtMiddleware.verifyToken,jwtMiddleware.verifyAdmin ,userController.deleteAUser)
-    .get(jwtMiddleware.verifyToken,jwtMiddleware.verifyAdmin ,userController.getAUser)
+    .route('/:id_skill')
+    .put(jwtMiddleware.verifyToken,skillController.updateASkill)
+    .delete(jwtMiddleware.verifyToken,jwtMiddleware.verifyAdmin ,skillController.deleteASkill)
+    .get(jwtMiddleware.verifyToken,jwtMiddleware.verifyAdmin ,skillController.getASkill)
 
-router
-    .route('/:id_user/assignment')
-    .get(jwtMiddleware.verifyToken, userController.getAssignment)
 
 module.exports = router;

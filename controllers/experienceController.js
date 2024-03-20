@@ -12,7 +12,7 @@ exports.listAllExperiences = async function (req, res) {
     }
 }
 
-exports.createAExperience = async function (req, res) {
+exports.createAnExperience = async function (req, res) {
     try {
         const experience = new Experience(req.body);
         await experience.save();
@@ -24,11 +24,11 @@ exports.createAExperience = async function (req, res) {
 
 }
 
-exports.updateASkill = async (req, res) =>{
+exports.updateAnExperience = async (req, res) =>{
     try {
-        const user = await Skill.findByIdAndUpdate(req.params.id_skill,req.body, {new : true});
+        const experience = await Skill.findByIdAndUpdate(req.params.id_experience,req.body, {new : true});
         res.status(201);
-        res.json(user);
+        res.json(experience);
     }
     catch (error) {
         res.status(500).json({message:"Error server response"});
@@ -36,11 +36,11 @@ exports.updateASkill = async (req, res) =>{
     }
 }
 
-exports.deleteASkill = async (req, res) =>{
+exports.deleteAnExperience = async (req, res) =>{
     try {
-        const user = await Skill.findByIdAndDelete(req.params.id_skill);
+        const experience = await Experience.findByIdAndDelete(req.params.id_experience);
         res.status(201);
-        res.json({message:"User deleted successfully"});
+        res.json({message:"Experience deleted successfully"});
     }
     catch (error) {
         res.status(500).json({message:"Erreur server response"});
@@ -48,11 +48,11 @@ exports.deleteASkill = async (req, res) =>{
     }
 }
 
-exports.getAUser = async (req, res) => {
+exports.getAnExperience = async (req, res) => {
     try{
-        const skill = await Skill.findById(req.params.id_skill);
+        const experience = await Experience.findById(req.params.id_experience);
         res.status(201);
-        res.json(user);
+        res.json(experience);
     }
     catch (error) {
         res.status(500);
@@ -60,3 +60,5 @@ exports.getAUser = async (req, res) => {
         res.json({message:"Erreur serveur"});
     }
 }
+
+

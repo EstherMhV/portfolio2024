@@ -1,22 +1,22 @@
-const Skill = require('../models/skillModel');
+const About = require('../models/AboutModel');
 const jwt = require('jsonwebtoken');
 
 
-exports.listAllSkills = async function (req, res) {
+exports.listAllAbout = async function (req, res) {
     try {
-        const users = await Skill.find({});
-        res.status(200).json(users);
+        const about = await About.find({});
+        res.status(200).json(about);
     } catch (error) {
         res.status(500).json({ message: "Erreur server response" });
         console.log(error);
     }
 }
 
-exports.createASkill = async function (req, res) {
+exports.createAbout = async function (req, res) {
     try {
-        const skill = new Skill(req.body);
-        await skill.save();
-        res.status(201).json(skill);
+        const about = new About(req.body);
+        await about.save();
+        res.status(201).json(about);
     } catch (error) {
         res.status(500).json({ message: "Erreur server response" });
         console.log(error);
@@ -24,11 +24,11 @@ exports.createASkill = async function (req, res) {
 
 }
 
-exports.updateASkill = async (req, res) =>{
+exports.updateAbout = async (req, res) =>{
     try {
-        const user = await Skill.findByIdAndUpdate(req.params.id_skill,req.body, {new : true});
+        const about = await About.findByIdAndUpdate(req.params.id_about,req.body, {new : true});
         res.status(201);
-        res.json(user);
+        res.json(about);
     }
     catch (error) {
         res.status(500).json({message:"Error server response"});
@@ -36,11 +36,11 @@ exports.updateASkill = async (req, res) =>{
     }
 }
 
-exports.deleteASkill = async (req, res) =>{
+exports.deleteAbout = async (req, res) =>{
     try {
-        const user = await Skill.findByIdAndDelete(req.params.id_skill);
+        const about = await About.findByIdAndDelete(req.params.id_about);
         res.status(201);
-        res.json({message:"User deleted successfully"});
+        res.json({message:"about deleted successfully"});
     }
     catch (error) {
         res.status(500).json({message:"Erreur server response"});
@@ -48,11 +48,11 @@ exports.deleteASkill = async (req, res) =>{
     }
 }
 
-exports.getASkill = async (req, res) => {
+exports.getAbout = async (req, res) => {
     try{
-        const skill = await Skill.findById(req.params.id_skill);
+        const about = await About.findById(req.params.id_about);
         res.status(201);
-        res.json(skill);
+        res.json(about);
     }
     catch (error) {
         res.status(500);
@@ -60,3 +60,4 @@ exports.getASkill = async (req, res) => {
         res.json({message:"Erreur serveur"});
     }
 }
+
