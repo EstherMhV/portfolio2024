@@ -1,10 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
 import styles from "@/app/ui/dashboard/products/products.module.css";
-import Search from "@/app/ui/dashboard/search/search";
 import Pagination from "@/app/ui/dashboard/pagination/pagination";
-import { fetchProducts } from "@/app/lib/data";
-import { deleteProduct } from "@/app/lib/actions";
+
 
 const ProductsPage = async ({ searchParams }) => {
     const q = searchParams?.q || "";
@@ -14,8 +12,7 @@ const ProductsPage = async ({ searchParams }) => {
     return (
         <div className={styles.container}>
             <div className={styles.top}>
-                <Search placeholder="Search for a product..." />
-                <Link href="/dashboard/products/add">
+                <Link href="/dashboard/skills">
                     <button className={styles.addButton}>Add New</button>
                 </Link>
             </div>
