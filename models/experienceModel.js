@@ -20,7 +20,7 @@ let projectSchema = new Schema({
         required: true,
     },
 
-    stacks: {
+    stack: {
         type: String,
         required: true,
     },

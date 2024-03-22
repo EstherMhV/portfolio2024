@@ -1,5 +1,5 @@
 const Education = require('../models/educationModel');
-const jwt = require('jsonwebtoken');
+
 
 
 exports.listAllEducation = async function (req, res) {

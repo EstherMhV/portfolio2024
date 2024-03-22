@@ -1,5 +1,4 @@
 const Skill = require('../models/skillModel');
-const jwt = require('jsonwebtoken');
 
 
 exports.listAllSkills = async function (req, res) {
@@ -38,9 +37,9 @@ exports.updateASkill = async (req, res) =>{
 
 exports.deleteASkill = async (req, res) =>{
     try {
-        const user = await Skill.findByIdAndDelete(req.params.id_skill);
+        const skill = await Skill.findByIdAndDelete(req.params.id_skill);
         res.status(201);
-        res.json({message:"User deleted successfully"});
+        res.json({message:"Skill deleted successfully"});
     }
     catch (error) {
         res.status(500).json({message:"Erreur server response"});
