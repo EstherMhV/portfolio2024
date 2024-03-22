@@ -2,9 +2,17 @@ import connectMongoDB from "@/libs/mongodb"
 import Education from "@/models/educationModel";
 import { NextResponse } from "next/server";
 
+export async function POST(request: { text: () => Promise<string>; }) {
 
-export async function POST(request: { json: () => { degree: any; period: any; description: any; image: any; }; }) {
-    const {degree,period,description,image} = request.json();
+    const rawBody = await request.text();
+
+
+    const params = new URLSearchParams(rawBody);
+    const degree = params.get('degree');
+    const period = params.get('period');
+    const description = params.get('description');
+    const image = params.get('image');
+
     await connectMongoDB();
     await Education.create({degree,period,description,image});
     

@@ -3,17 +3,23 @@ import Skill from "@/models/skillModel";
 import { NextResponse } from "next/server";
 
 
-export async function POST(request: { json: () => { name: String; level: Number;  image: String;}; }) {
-    const {name,level,image} = request.json();
+export async function POST(request: { text: () => Promise<string>; }) {
+
+    const rawBody = await request.text();
+
+    const params = new URLSearchParams(rawBody);
+    const name = params.get('name');
+    const level = Number(params.get('level'));
+    const image = params.get('image');
 
     if (!name || !level || !image) {
-        return NextResponse.json({message: "Error: name, level, and image are required"}, { status: 400});
+        return NextResponse.json({ message: "Error: name, level, and image are required" }, { status: 400 });
     }
 
     await connectMongoDB();
-    await Skill.create({name,level,image});
-    
-    return NextResponse.json({message: "Success"}, { status: 201});
+    await Skill.create({ name, level, image });
+
+    return NextResponse.json({ message: "Success" }, { status: 201 });
 }
 
 export async function GET() {
@@ -26,5 +32,5 @@ export async function DELETE(request: { nextUrl: { searchParams: { get: (arg: st
     const id = request.nextUrl.searchParams.get("id");
     await connectMongoDB();
     await Skill.findByIdAndDelete(id);
-    return NextResponse.json({ message: "experience Deleted"}, { status:200});
+    return NextResponse.json({ message: "experience Deleted" }, { status: 200 });
 }
