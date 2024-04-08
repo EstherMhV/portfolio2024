@@ -40,7 +40,7 @@ const Navbar = () => {
                         <a href="#projects" className="cursor-pointer">
                             Projects
                         </a>
-                        <a href="#Dashboard" className="cursor-pointer">
+                        <a href="./" className="cursor-pointer">
                             Dashboard
                         </a>
                     </div>
