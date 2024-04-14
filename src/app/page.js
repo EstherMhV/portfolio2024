@@ -4,19 +4,12 @@ import ClientExperienceAndEducationView from "@/components/client-view/experienc
 import ClientHomeView from "@/components/client-view/home";
 import ClientProjectView from "@/components/client-view/project";
 import ClientSkillView from "@/components/client-view/skills";
+import axios from 'axios';
 
 async function extractAllDatas(currentSection) {
-  const res = await fetch(`${process.env.API_URL}/api/${currentSection}/get`, {
-    method: "GET",
-    cache: "no-store",
-  });
-
-  const text = await res.text();
-  console.log(text);
-
   try {
-    const data = JSON.parse(text);
-    return data && data.data;
+    const res = await axios.get(`${process.env.API_URL}/api/${currentSection}/get`);
+    return res.data && res.data.data;
   } catch (err) {
     console.error(err);
   }
