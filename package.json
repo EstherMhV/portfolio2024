@@ -1,5 +1,5 @@
 {
-  "name": "lamadevnext14dashboard",
+  "name": "nextjs-portfolio-2023",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -9,20 +9,25 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@next/eslint-plugin-next": "14.0.1",
-    "bcrypt": "5.1.1",
-    "mongoose": "8.0.0",
-    "next": "^14.0.1",
-    "next-auth": "5.0.0-beta.3",
+    "@emotion/react": "^11.11.1",
+    "@emotion/styled": "^11.11.0",
+    "@fullhuman/postcss-purgecss": "^5.0.0",
+    "@mui/lab": "^5.0.0-alpha.142",
+    "@mui/material": "^5.14.7",
+    "autoprefixer": "10.4.15",
+    "bcryptjs": "^2.4.3",
+    "eslint-config-next": "^14.2.1",
+    "framer-motion": "^10.16.2",
+    "mongoose": "^7.5.0",
+    "next": "^14.2.1",
+    "postcss": "8.4.29",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-icons": "4.11.0",
-    "recharts": "2.9.0",
-    "tailwindcss": "^3.4.3",
-    "use-debounce": "9.0.4"
-  },
-  "devDependencies": {
-    "eslint": "8",
-    "eslint-config-next": "14.0.1"
+    "react-icons": "^4.10.1",
+    "react-scroll": "^1.8.9",
+    "react-slick": "^0.29.0",
+    "tailwind": "^4.0.0",
+    "tailwindcss": "3.3.3",
+    "webpack": "^5.91.0"
   }
 }
