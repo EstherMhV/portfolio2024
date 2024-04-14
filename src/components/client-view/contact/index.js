@@ -7,19 +7,19 @@ import { addData } from "@/services";
 const controls = [
   {
     name: "name",
-    placeholder: "Enter your name",
+    placeholder: "Nom",
     type: "text",
     label: "Name",
   },
   {
     name: "email",
-    placeholder: "Enter your email",
+    placeholder: "Email",
     type: "email",
     label: "Email",
   },
   {
     name: "message",
-    placeholder: "Enter your message",
+    placeholder: "Message",
     type: "text",
     label: "Message",
   },
@@ -73,7 +73,7 @@ export default function ClientContactView() {
       <AnimationWrapper className={"py-6"}>
         <div className="flex flex-col justify-center items-center row-start-2 sm:row-start-1">
           <h1 className="leading-[70px] mb-4 text-3xl lg:text-4xl xl:text-5xl font-medium">
-            {"Contact Me".split(" ").map((item, index) => (
+            {"Contactez Moi".split(" ").map((item, index) => (
               <span
                 className={`${index === 1 ? "text-green-main" : "text-[#000]"}`}
               >
@@ -139,7 +139,7 @@ export default function ClientContactView() {
                   onClick={handleSendMessage}
                   className="disabled:opacity-50 py-3 lg:py-4 px-12 lg:px-16 text-white-500 font-semibold rounded-lg text-2xl tracking-widest bg-green-main outline-none"
                 >
-                  envoyer
+                  Envoyer
                 </button>
               </div>
             </div>

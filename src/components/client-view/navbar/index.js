@@ -6,11 +6,11 @@ import { Link as LinkScroll, scroller } from "react-scroll";
 const menuItems = [
   {
     id: "home",
-    label: "Home",
+    label: "Acceuil",
   },
   {
     id: "about",
-    label: "About",
+    label: "A propos",
   },
   {
     id: "experience",
@@ -18,7 +18,7 @@ const menuItems = [
   },
   {
     id: "project",
-    label: "projects",
+    label: "projets",
   },
   {
     id: "contact",
@@ -92,7 +92,7 @@ export default function Navbar() {
               }
               className="py-3 px-6 border-[2px] bg-[#fff] border-green-main text-[#000] font-semibold rounded-lg text-xl tracking-widest hover:shadow-green-md transition-all outline-none"
             >
-              Contact Me
+              Contactez Moi
             </button>
           </div>
         </nav>

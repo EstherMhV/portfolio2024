@@ -63,7 +63,7 @@ export default function ClientProjectView({ data }) {
                     </div>
                     <div className="absolute w-full bottom-0 justify-center flex gap-2">
                       <button onClick={()=>router.push(item.website)} className="p-2 text-white-500 font-semibold text-[14px] tracking-widest bg-green-main transition-all outline-none">
-                        Website
+                        Site Web
                       </button>
                       <button onClick={()=>router.push(item.github)} className="p-2 text-white-500 font-semibold text-[14px] tracking-widest bg-green-main transition-all outline-none">
                         Github

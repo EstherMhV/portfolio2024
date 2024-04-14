@@ -37,7 +37,7 @@ export default function ClientAboutView({ data }) {
   const setVariants = useMemo(() => variants(), []);
 
 
-  const headingText = "Why Hire Me For Your Next Project ?";
+  const headingText = "A propos de moi.";
 
   return (
     <div className="max-w-screen-xl mt-24 mb-6 sm:mt-14 sm:mb-14 px-6 sm:px-8 lg:px-16 mx-auto" id="about">
