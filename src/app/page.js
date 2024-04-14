@@ -6,7 +6,7 @@ import ClientProjectView from "@/components/client-view/project";
 import ClientSkillView from "@/components/client-view/skills";
 
 async function extractAllDatas(currentSection) {
-  const res = await fetch(`http://localhost:3000/api/${currentSection}/get`, {
+  const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/${currentSection}/get`, {
     method: "GET",
     cache: "no-store",
   });
