@@ -2,10 +2,9 @@ import mongoose from "mongoose";
 
 export default async function connectToDB() {
   try {
-    await mongoose.connect(
-      "mongodb+srv://esthermehal:lioCYN54miK5xjJt@cluster0.pk2nysd.mongodb.net/"
-    );
-    console.log("Database connected successfully");
+    await mongoose.connect(process.env.MONGODB_URI)
+    console.log("Connected to MOngoDb!");
+
   } catch (e) {
     console.log(e);
   }
